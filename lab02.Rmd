@@ -1,104 +1,104 @@
 ---
-title: "DS 202 - lab #2: exploring chocolates"
-author: "Heike Hofmann"
-ratio: 16x10
+title: "DS 202 - lab #2: exploring residential sales in Ames"
+author: Heike Hofmann
+date: "`r Sys.Date()`"
 output:
-  rmdshower::shower_presentation:
-    self_contained: false
-    katex: true
-    theme: ribbon
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-##  {.white}
+# Overview
 
-<img src="images/choco.jpeg" class="cover" height="1500"/>
+In this activity we are going to explore a data set and write-up our findings in a team-edited report.
 
-<p class="white" style="font-size:100px" align="center">
 
-Lab #2<br> chocolate tasting
 
-</p>
+---
 
-## Outline
+# Getting Ready
 
--   Find your team members
--   Create a repository (one per team) & give access to everybody
--   Do a data exploration (on chocolate ratings )
--   Create an R markdown file that contains all code to read the data and create the plots
--   Submit!
+1. Identify your team! Go to Canvas and find out which team you are in for Lab 2. There are 12 teams with 3 or 4 members.
 
-# Find your team members
+2. Join the zoom break-out room that has the same number as your team. 
+If you are in the classroom, find the other members of your team and sit with them.
 
-## github repository
+3. Introduce yourself to each other. 
 
-1.  Log into github
-2.  Pick one team member to create a repository called 'lab2'
-3.  Go into the settings of the repository and add your team members as collaborators
+4. Go to https://ds202-at-isu.github.io/labs/lab02.html and follow the instructions.
 
-## Background
 
-Brady Brelinski, Founding Member of the Manhattan Chocolate Society, obviously likes chocolate. He has assembled a database of ratings for plain dark chocolate bars: [Flavors of chocolate](http://flavorsofcacao.com/chocolate_database.html)
+In case of questions: if you are on zoom, you can leave the breakout room and ask a question. In the classroom make yourself noticed :)
 
-By now, over 1800 different chocolate bars have been rated.
+---
 
-## Meaning of ratings
+# Step-by Step
 
-Flavors of Cacao Rating System:
+1. Accept the link to Github Classroom shared in the announcement/chat. 
+  
+  - This link will ask you to log in to github. Select your name from the list by clicking on it.  
+<!-- https://classroom.github.com/a/pfl2YPZY-->
+  - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
--   5= Elite (Transcending beyond the ordinary limits)
--   4= Premium (Superior flavor development, character and style)
--   3= Satisfactory(3.0) to praiseworthy(3.75) (well made with special qualities)
--   2= Disappointing (Passable but contains at least one significant flaw)
--   1= Unpleasant (mostly unpalatable)
+2. Overall aim of this lab:
+  
+  - Residential sales of properties in Ames since 2017 are made available as part of the `classdata` package. You are asked to explore the data set as a group and write up your findings.
+  **Make sure to update the classdata package by running the following line:**
+```{r eval=FALSE}
+remotes::install_github("heike/classdata")
+```  
+  - Describe your findings: each team member is asked to follow through with one line of investigation/exploration. Document your findings in text, code and in pictures. 
+  - Collect all of your experiences and make it into one cohesive document. Use the **README.Rmd** file of the lab-2 repo for this document. Write a TL;DR at the front of the document summarising your findings.
 
-## Reading the data
+---
 
-The file `choco.csv` at <https://ds202-at-isu.github.io/labs/data/choco.csv> is a web scraping from the chocolate flavor data base.
+# A Data Exploration
 
-You can load the data into your session using the command below:
+1. inspect the first few lines of the data set: 
 
-```{r}
-choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
-head(choco)
-```
+  - what variables are there? of what type are the variables? what does each variable mean? what do we expect their data range to be?
 
-# A data exploration
+2. is there a variable of special interest or focus? 
 
-## Question set (team)
+3. start the exploration with the main variable: 
 
-Answer each of the following questions using R code to get an answer. When asked for a plot, use the `ggplot2` package.
+  - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd? 
+  - follow-up on oddities: see 4
 
-1.  What is the overall number of chocolate bars rated?
-2.  How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
-3.  Upload your RMarkdown file to the repository
+4. pick a variable that might be related to the main variable. 
 
-## Question set (individual)
+  - what is the range of that variable? plot. describe the pattern.
+  - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities. 
 
-Download the RMarkdown file from the repository.
+---
 
-3.  For each of the questions below provide at least one graphic as a basis for your answer.
+# Procedure
 
-    1.  How are ratings distributed? Draw a histogram of ratings and describe it. Don't forget to mention outliers, if there are any.
-    2.  Do ratings depend on the cocoa percentage of a chocolate bar?
-    3.  How do ratings compare across different company locations? Focus on the three locations with the most ratings:
+The main variable for this exploration is `Sale Price`. **As a team**, do steps 1 through 3. Document your findings in the README.Rmd of the lab's repo.
 
-    ```{r, message=FALSE}
-    top3 <- dplyr::filter(choco, Company.Location %in% c("U.S.A.", "France", "Canada"))
-    ```
+**As a team**, discuss different lines of investigation (step 4) and agree on who is doing which investigation. 
+Make a note of who is doing what in the README.Rmd
 
-Upload your answers to the repository. Discuss and refine answers as a team.
+**Individually:** follow through with your line of investigation. Include at least one plot that describes the relationship between sales prices and your variable. Include one paragraph describing the pattern you see. Are there oddities? Follow-up on (some of) them.
 
-## Submission
+---
 
-In Canvas, submit an RMarkdown file with:
+# Grading & Submission
 
-a.  the names of all team members that worked on the document.
-b.  a link to the github repo you were working in.
-c.  code and answers to all of the questions.
-d.  one paragraph commenting on the workflow.
 
-Due date: You have time until Monday at 10 pm to submit the final RMmarkdown file.
+**Grading:** We expect equal contributions from all members in a team. For the grading we will make use of the github commit history to verify that everybody contributed. 
+
+*There will be differential grades, if necessary* 
+
+**Submission:**
+All submissions to the github repo will be automatically uploaded for grading once the due date is passed. Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
+
+
+Due date: You have time until Monday at 10 pm to submit final edits to the README.Rmd file. Make sure that the file knits.
