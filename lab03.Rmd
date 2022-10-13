@@ -1,126 +1,109 @@
 ---
-title: "DS 202 - lab #3: Exploring Happiness"
-author: "Heike Hofmann"
-ratio: 16x10
+title: "DS 202 - lab #3: Avengers' Perils"
+author: Heike Hofmann
 output:
-  rmdshower::shower_presentation:
-    self_contained: false
-    katex: true
-    theme: ribbon
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## { .white }
+![](https://upload.wikimedia.org/wikipedia/en/2/2b/Avengers_%28Marvel_Comics%29_vol_3_num_38.jpg)
 
-<img src="images/happiness.jpeg" class="cover" height=1500>
+# Overview
 
-<p class="white" style="font-size:100px" align=center>
- Lab #3<br> Happiness!
-</p>
+In this activity we are going to
 
+1. reshape a data set, and then
+2. use the data to fact-check some statistics in a published report. 
 
-
-## Outline
-
-- Find your team members
-- Create a repository (one per team) & give access to everybody
-- Do a data exploration (on happiness)
-- Create an R markdown file that contains all code to read the data and create the plots
-- Submit!
+The deliverable is, again, a team-edited report.
 
 
-# Find your team members
 
-## github repository
+---
 
-1. Log into github 
-2. Pick one team member to create a repository called 'lab3'. Make sure to initialize the repo with a README file. 
-3. Go into the settings of the repository and add your team members as collaborators
+# Getting Ready
 
-## Cloning the repo
+1. Identify your team! Go to Canvas and find out your team  for Lab 3. There are 12 teams with 3 or 4 members.
 
-1. Open RStudio, create a new repository using the option "Version Control", choose git as the option
-2. From your github repository copy  the info you get when clicking on the green "Clone or download" button
-3. Paste the info into "Repository URL"
-4. Create the project.
+2. Join the zoom break-out room that has the same number as your team. 
+If you are in the classroom, find the other members of your team and sit with them.
 
-This clones the repository from github. You can now make local changes. 
+3. Introduce yourself to each other. 
 
-## A first round of push and pull
+4. Go to https://ds202-at-isu.github.io/labs/lab03.html and follow the instructions.
 
-Do these changes one at a time in your team. Don't try to do them all at once. 
 
-1. Make a change to the README document.
-2. Go to the 'Git' tab in the top right panel. 
-3. All modified files will have an icon with a white 'M' on blue background.
-4. Select the checkbox and click on 'Commit'. Write a commit message in the top right panel of the new dialog window. 
-5. Hit the green arrow pointing up to 'push' changes to your github repo.
-6. Hit the blue arrow pointing down to 'pull' changes from your github repo.
+In case of questions: if you are on zoom, you can leave the breakout room and ask a question. In the classroom make yourself noticed :)
 
-Commit, and pull, then push often. This will avoid conflicts.
+---
 
-## Background
+# Step-by Step
 
-The General Social Survey (GSS) has been run by NORC every other year since 1972 to keep track of current opinions across the United States. 
+1. Accept the link to Github Classroom shared in the announcement/chat. 
+  
+  - This link will ask you to log in to github. Select your name from the list by clicking on it.  
+<!-- https://classroom.github.com/a/pfl2YPZY-->
+  - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
-The package `productplots` contains a subset of this data, called `happy`.
-You can access the data using the command
+2. Overall aim of this lab: Tidy a data set, then use it for fact-checking a report.
 
-```{r}
-data(happy, package="productplots")
-head(happy)
-```
 
-## Updating and cleaning data
 
-Unfortunately, the dataset ends in 2006. So today's activity is all about updating the dataset to the data from 2016.
+---
 
-An excerpt of the GSS data is available from our course website. 
-Dowload the file [HAPPY.rds]() and put the file into a folder called "data" next to your Rmd file. The following command is going to load the data into your R session:
+# Data Background
+
+The data was  collected by FiveThirtyEight. This time we are interested in a review of life and death among the Avengers, a group of super heroes in the Marvel universe; the accompanying article is published [here](https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/)
+
+In a universe where time travel, alternate lifelines and portals with all kinds of powers exist, dying might be less permanent than in the world that we are used to. 
+
+---
+
+# Data Background (2)
+
+In 2015 FiveThirtyEight has conducted a comprehensive review of all Avengers. We can access the resulting data using the command
 
 ```{r}
-HAPPY <- readRDS("data/HAPPY.rds")
+av <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/avengers/avengers.csv", stringsAsFactors = FALSE)
+head(av)
 ```
 
-You can find a codebook with explanations for each of the variables at https://gssdataexplorer.norc.org/
+---
 
+# As a team: Data tidying
 
+The avenger data consists of ten columns for each avenger called Death[1-5] to Return[1-5]
 
-## Part one (cleaning)
+Get the data into a format where the five columns for Death[1-5] are replaced by two columns: Time, and Death. Time should be a number between 1 and 5 (look into the function `parse_number`); Death is a categorical variables with values "yes", "no" and "". Call the resulting data set `deaths`. 
 
-<p style="font-size:20px">
-Answer each of the following questions using R code to get an answer. 
-Write a separate code chunk for each variable, once all the data manipulation is done, show the values in a barchart or histogram and comment on the plot.
-</p>
+Similarly, deal with the returns of characters.
 
-1. Data cleaning: the values "IAP", "DK" and "NA" all encode missing values. Replace all of these instances by the value `NA`. 
-2. Check the type of the variable and cast into the right type (factor variable for categorical variables). For age, change "89 OR OLDER" to 89 and assume the variable should be numeric.
-3. Bring all levels of factors into a sensible order. For marital you could e.g. order the levels according to average age. 
+Answer the question: how many deaths on average, does an Avenger suffer?
 
-<p style="font-size:20px">
-Save the final data set as RDS file (binary R data) using the command:`saveRDS`</p>
+---
 
-## Part two (exploration)
+# Individually: fact-check
 
-*Happiness!*
+Each team member picks one of the statements in the FiveThirtyEight [analysis](https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/) and fact checks it based on the data. Use dplyr functionality whenever possible.
 
-Investigate the relationship between happiness and two other variables in the data. Find a visualization that captures the relationship and write a paragraph to describe it. 
+Upload your answers and the code to the repository. Discuss and refine answers as a team.
 
-Upload your answers and the dataset to the repository. Discuss and refine answers as a team.
+---
 
-## Submission
+# Submission
 
-In Canvas, submit an RMarkdown file (and the knitted html document) with: 
+Knit the Rmd document and upload both the md and the Rmd file to the team's repository.
 
-  a. the names of all team members that worked on the document.
-  b. a link to the github repo you were working in.
-  c. code and answers to all of the questions.
-  d. you can upload the data file, but you don't have to
 
 
 Due date: You have time until Monday at 10 pm to submit the final RMmarkdown file.
 
-
+One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)
