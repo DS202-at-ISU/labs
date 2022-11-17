@@ -220,6 +220,6 @@ Push all of those changes to the repo.
 
 
 
-Due date: You have time until Monday, Nov 29 at 10 pm to submit the final RMmarkdown file.
+Due date: You have time until Monday, Nov 28 at 10 pm to submit the final RMmarkdown file.
 
 One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)
