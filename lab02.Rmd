@@ -1,6 +1,6 @@
 ---
 title: "DS 202 - lab #2: exploring residential sales in Ames"
-author: Heike Hofmann
+author: Will Ju
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -27,15 +27,13 @@ In this activity we are going to explore a data set and write-up our findings in
 
 1. Identify your team! Go to Canvas and find out which team you are in for Lab 2. There are 12 teams with 3 or 4 members.
 
-2. Join the zoom break-out room that has the same number as your team. 
+2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
 If you are in the classroom, find the other members of your team and sit with them.
 
 3. Introduce yourself to each other. 
 
 4. Go to https://ds202-at-isu.github.io/labs/lab02.html and follow the instructions.
 
-
-In case of questions: if you are on zoom, you can leave the breakout room and ask a question. In the classroom make yourself noticed :)
 
 ---
 
@@ -50,10 +48,6 @@ In case of questions: if you are on zoom, you can leave the breakout room and as
 2. Overall aim of this lab:
   
   - Residential sales of properties in Ames since 2017 are made available as part of the `classdata` package. You are asked to explore the data set as a group and write up your findings.
-  **Make sure to update the classdata package by running the following line:**
-```{r eval=FALSE}
-remotes::install_github("heike/classdata")
-```  
   - Describe your findings: each team member is asked to follow through with one line of investigation/exploration. Document your findings in text, code and in pictures. 
   - Collect all of your experiences and make it into one cohesive document. Use the **README.Rmd** file of the lab-2 repo for this document. Write a TL;DR at the front of the document summarising your findings.
 
@@ -101,4 +95,4 @@ Make a note of who is doing what in the README.Rmd
 All submissions to the github repo will be automatically uploaded for grading once the due date is passed. Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
 
 
-Due date: You have time until Monday at 10 pm to submit final edits to the README.Rmd file. Make sure that the file knits.
+Due date: You have time until Monday at 11:59 pm to submit final edits to the README.Rmd file. Make sure that the file knits.
