@@ -1,6 +1,6 @@
 ---
 title: "DS 202 - lab #3: Avengers' Perils"
-author: Heike Hofmann
+author: Will Ju
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -31,17 +31,14 @@ The deliverable is, again, a team-edited report.
 
 # Getting Ready
 
-1. Identify your team! Go to Canvas and find out your team  for Lab 3. There are 12 teams with 3 or 4 members.
+1. Identify your team! Go to Canvas and find out which team you are in for Lab 3. There are 12 teams with 3 or 4 members.
 
-2. Join the zoom break-out room that has the same number as your team. 
+2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
 If you are in the classroom, find the other members of your team and sit with them.
 
 3. Introduce yourself to each other. 
 
 4. Go to https://ds202-at-isu.github.io/labs/lab03.html and follow the instructions.
-
-
-In case of questions: if you are on zoom, you can leave the breakout room and ask a question. In the classroom make yourself noticed :)
 
 ---
 
@@ -62,6 +59,8 @@ In case of questions: if you are on zoom, you can leave the breakout room and as
 # Data Background
 
 The data was  collected by FiveThirtyEight. This time we are interested in a review of life and death among the Avengers, a group of super heroes in the Marvel universe; the accompanying article is published [here](https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/)
+
+The description of the data is [here](https://github.com/fivethirtyeight/data/tree/master/avengers)
 
 In a universe where time travel, alternate lifelines and portals with all kinds of powers exist, dying might be less permanent than in the world that we are used to. 
 
@@ -104,6 +103,6 @@ Knit the Rmd document and upload both the md and the Rmd file to the team's repo
 
 
 
-Due date: You have time until Monday at 10 pm to submit the final RMmarkdown file.
+Due date: You have time until Monday at 11:59 pm to submit the final RMmarkdown file.
 
 One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)
