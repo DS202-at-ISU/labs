@@ -3,8 +3,8 @@
   <head>
     <title>DS 202 - lab #4: Scraping (into) the Hall of Fame</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Heike Hofmann" />
-    <script src="libs/header-attrs-2.18/header-attrs.js"></script>
+    <meta name="author" content="Will Ju" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # DS 202 - lab #4: Scraping (into) the Hall of Fame
 ]
 .author[
-### Heike Hofmann
+### Will Ju
 ]
 
 ---
@@ -33,7 +33,7 @@ background-image: url(images/hof.jpg)
 
 # Big Picture Goal
 
-We are going to contribute an extension of the Hall of Fame data in the Lahman data package for the years 2019 to 2022.
+We are going to contribute an extension of the Hall of Fame data in the Lahman data package for the year 2023.
 
 # Step-by-Step
 
@@ -44,28 +44,25 @@ In this activity we are going to
     
     a. automate the download process, 
     b. and - as much as possible - clean the data automatically, or at least identify potential problems, to, finally, 
-    b. use the scrapers in future years
+    c. use the scrapers in future years
     
-3. use the scraper to get data for the years 2019 to 2022.
+3. use the scraper to get data for the year 2023.
 4. document the process. 
 
-The deliverables are (1) a README file with a filled in table, (2) individual reports (Rmd) and (3) the dataset.
+The deliverables are (1) individual reports (Rmd) and (2) the dataset.
 
 ---
 
 # Getting Ready
 
-1. Identify your team! Go to Canvas and find out your team  for Lab 4. There are 12 teams with 3 or 4 members.
+1. Identify your team! Go to Canvas and find out which team you are in for Lab 4.
 
-2. Join the zoom break-out room that has the same number as your team. 
+2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
 If you are in the classroom, find the other members of your team and sit with them.
 
 3. Introduce yourself to each other. 
 
 4. Go to https://ds202-at-isu.github.io/labs/lab04.html and follow the instructions.
-
-
-In case of questions: if you are on zoom, you can leave the breakout room and ask a question. In the classroom make yourself noticed :)
 
 ---
 
@@ -73,13 +70,13 @@ In case of questions: if you are on zoom, you can leave the breakout room and as
 
 1. Accept the link to Github Classroom shared in the announcement/chat. 
   
-  - This link will ask you to log in to github. Select your name from the list by clicking on it.  
-&lt;!-- https://classroom.github.com/a/pfl2YPZY--&gt;
+  - This link will ask you to log in to github. Select your name from the list by clicking on it. 
+  
   - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
 2. Start a new RStudio project on your local machine using the link to the github repository.
 
-3. Create a new RMarkdown file called `progress-report-&lt;your github handle&gt;.Rmd` (Mine would be called `progress-report-heike.Rmd`). Delete everything from line 12 on. 
+3. Create a new RMarkdown file called `progress-report-&lt;your github handle&gt;.Rmd` (Mine would be called `progress-report-willju-wangqian.Rmd`). Delete everything from line 12 on. 
 
 4. Save the file and add it to your github repository. 
 
@@ -94,15 +91,15 @@ In case of questions: if you are on zoom, you can leave the breakout room and as
 
 The Lahman data package is based on [Sean Lahman](https://www.seanlahman.com/)'s  Baseball  [Database](https://www.seanlahman.com/baseball-archive/statistics/). 
 
-The `HallOfFame` table is a part of this set of tables and  has [not been updated since 2018](https://github.com/chadwickbureau/baseballdatabank/commits/a0b17f910506f7bfc2be2f834c50d50beb884c8f/core/HallOfFame.csv?browsing_rename_history=true&amp;new_path=contrib/HallOfFame.csv&amp;original_branch=master)
+The `HallOfFame` table is a part of this set of tables and has data up to 2022.
 
 ## Baseball Reference 
 
 The site baseball-reference.com has grown out of Sean Lahman's work and is now maintained independently. 
 
-Incidentally, it also has tables with Hall of Fame information, e.g. for 2022: 
+Incidentally, it also has tables with Hall of Fame information, e.g. for 2023: 
 
-https://www.baseball-reference.com/awards/hof_2022.shtml
+https://www.baseball-reference.com/awards/hof_2023.shtml
 
 ---
 # Scrape the data
@@ -120,22 +117,18 @@ head(HallOfFame, 3)
 ```
 
 ```
-##    playerID yearID votedBy ballots needed votes inducted
-## 1  cobbty01   1936   BBWAA     226    170   222        Y
-## 2  ruthba01   1936   BBWAA     226    170   215        Y
-## 3 wagneho01   1936   BBWAA     226    170   215        Y
-##   category needed_note
-## 1   Player        &lt;NA&gt;
-## 2   Player        &lt;NA&gt;
-## 3   Player        &lt;NA&gt;
+##    playerID yearID votedBy ballots needed votes inducted category needed_note
+## 1  cobbty01   1936   BBWAA     226    170   222        Y   Player        &lt;NA&gt;
+## 2  ruthba01   1936   BBWAA     226    170   215        Y   Player        &lt;NA&gt;
+## 3 wagneho01   1936   BBWAA     226    170   215        Y   Player        &lt;NA&gt;
 ```
 ---
 
 # Deliverable: data
 
-As a team, create the Hall of fame data for the years 2019 to 2022.
+As a team, create the Hall of fame data for the year 2023.
 
-Save the result by appending the new data frame(s) to the existing data `HallOfFame.csv` in your repo.
+Save the result by appending the new data frame(s) to the existing data `HallOfFame` in `Lahman` package.
 
 
 ```r
@@ -152,6 +145,12 @@ HallOfFame %&gt;%
 # Some Data Tidying tricks
 
 
+```r
+library(rvest)
+url &lt;- "https://www.baseball-reference.com/awards/hof_2023.shtml"
+html &lt;- read_html(url)
+tables &lt;- html_table(html)
+```
 
 Should you be in the situation, that a data set does not have any names, but the names are stored as the first line of records:
 
@@ -162,18 +161,18 @@ head(tables[[1]], 3)
 
 ```
 ## # A tibble: 3 × 39
-##   ``    ``       ``    ``    ``    ``    ``    ``    ``    ``   
-##   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
-## 1 Rk    Name     YoB   Votes %vote HOFm  HOFs  Yrs   WAR   WAR7 
-## 2 1     David O… 1st   307   77.9% 171   55    20    55.3  35.2 
-## 3 2     X-Barry… 10th  260   66.0% 340   77    22    162.8 72.7 
-## # … with 29 more variables: `` &lt;chr&gt;, `` &lt;chr&gt;,
-## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
-## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
-## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
-## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
-## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
-## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, …
+##   ``    ``          ``    ``    ``    ``    ``    ``    ``    ``    ``    ``   
+##   &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 Rk    Name        YoB   Votes %vote HOFm  HOFs  Yrs   WAR   WAR7  JAWS  Jpos 
+## 2 1     Scott Rolen 6th   297   76.3% 99    40    17    70.1  43.6  56.9  55.8 
+## 3 2     Todd Helton 5th   281   72.2% 175   59    17    61.8  46.6  54.2  53.4 
+## # ℹ 27 more variables: `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
+## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
+## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
+## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
+## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Pitching Stats` &lt;chr&gt;,
+## #   `Pitching Stats` &lt;chr&gt;, `Pitching Stats` &lt;chr&gt;, `Pitching Stats` &lt;chr&gt;,
+## #   `Pitching Stats` &lt;chr&gt;, `Pitching Stats` &lt;chr&gt;, `Pitching Stats` &lt;chr&gt;, …
 ```
 ---
 
@@ -186,22 +185,6 @@ Write the dataset into a temporary file, and read the data back in (using the co
 write.csv(tables[[1]], "temp.csv", row.names=FALSE)
 backin &lt;- readr::read_csv("temp.csv", skip = 1, show_col_types =FALSE)
 head(backin, 3)
-```
-
-```
-## # A tibble: 3 × 39
-##      Rk Name   YoB   Votes `%vote`  HOFm  HOFs   Yrs   WAR  WAR7
-##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1     1 David… 1st     307 77.9%     171    55    20  55.3  35.2
-## 2     2 X-Bar… 10th    260 66.0%     340    77    22 163.   72.7
-## 3     3 X-Rog… 10th    257 65.2%     332    73    24 139.   65.9
-## # … with 29 more variables: JAWS &lt;dbl&gt;, Jpos &lt;dbl&gt;,
-## #   G...13 &lt;dbl&gt;, AB &lt;dbl&gt;, R &lt;dbl&gt;, H...16 &lt;dbl&gt;,
-## #   HR...17 &lt;dbl&gt;, RBI &lt;dbl&gt;, SB &lt;dbl&gt;, BB...20 &lt;dbl&gt;,
-## #   BA &lt;dbl&gt;, OBP &lt;dbl&gt;, SLG &lt;dbl&gt;, OPS &lt;dbl&gt;, `OPS+` &lt;dbl&gt;,
-## #   W &lt;dbl&gt;, L &lt;dbl&gt;, ERA &lt;dbl&gt;, `ERA+` &lt;dbl&gt;, WHIP &lt;dbl&gt;,
-## #   G...31 &lt;dbl&gt;, GS &lt;dbl&gt;, SV &lt;dbl&gt;, IP &lt;dbl&gt;, H...35 &lt;dbl&gt;,
-## #   HR...36 &lt;dbl&gt;, BB...37 &lt;dbl&gt;, SO &lt;dbl&gt;, …
 ```
 ---
 
@@ -230,8 +213,7 @@ gsub("X-", "Oh no! ", x)
 ```
 
 ```
-## [1] "David Ortiz"          "Oh no! Barry Bonds"  
-## [3] "Oh no! Roger Clemens"
+## [1] "David Ortiz"          "Oh no! Barry Bonds"   "Oh no! Roger Clemens"
 ```
 
 ```r
@@ -266,6 +248,7 @@ rbind(x1, x2)
 ```r
 dframe &lt;- rbind(x1, x2)
 ```
+
 Don't forget to save the result!
 
 ---
@@ -297,14 +280,11 @@ readr::write_csv(dframe, file="some-other-file.csv")
 
 1. Push changes to your file `progress-report-&lt;github handle&gt;.Rmd` to the github repo. 
 
-2. Fill out the table in  `README.Rmd.` Knit the `README.Rmd` to create a file `README.md`. 
-Push all of those changes to the repo.
-
-3. Push the expanded `HallOfFame.csv` to the team's repository.
+2. Save the expanded `HallOfFame` as a csv file `HallOfFame.csv`. Push `HallOfFame.csv` to the team's repository.
 
 
 
-Due date: You have time until Monday, Nov 28 at 10 pm to submit the final RMmarkdown file.
+Due date: You have time until Monday, Nov 27 at 11:59 pm to submit the final RMmarkdown file.
 
 One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)
     </textarea>
