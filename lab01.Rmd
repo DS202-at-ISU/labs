@@ -26,7 +26,7 @@ With your team members you will work on sharing and editing files on Github.
 
 # Getting Ready
 
-1. Identify your team! Go to Canvas and find out which team you are in for Lab 1. There are 13 teams with 3 or 4 members.
+1. Identify your team! Go to Canvas and find out which team you are in for Lab 1. There are 17 teams with 3 or 4 members.
 
 2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
 If you are in the classroom, find the other members of your team and sit with them.
@@ -45,7 +45,7 @@ In case of questions: if you are on zoom, you can leave the breakout room and as
 1. Accept the link to Github Classroom shared in the announcement/slack/chat. 
   
   - This link will ask you to log in to github. Select your name from the list by clicking on it.  
-<!-- https://classroom.github.com/a/pfl2YPZY-->
+<!-- https://classroom.github.com/a/N921U51U-->
   - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
 2. Overall aim of this lab:
