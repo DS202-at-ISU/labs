@@ -25,7 +25,7 @@ In this activity we are going to explore a data set and write-up our findings in
 
 # Getting Ready
 
-1. Identify your team! Go to Canvas and find out which team you are in for Lab 2. There are 12 teams with 3 or 4 members.
+1. Identify your team! Go to Canvas and find out which team you are in for Lab 2. There are 17 teams with 3 or 4 members.
 
 2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
 If you are in the classroom, find the other members of your team and sit with them.
@@ -47,7 +47,7 @@ If you are in the classroom, find the other members of your team and sit with th
 
 2. Overall aim of this lab:
   
-  - Residential sales of properties in Ames since 2017 are made available as part of the `classdata` package. You are asked to explore the data set as a group and write up your findings.
+  - Residential sales of properties in Ames since 2017 (`ames`) are made available as part of the `classdata` package. You are asked to explore the data set as a group and write up your findings.
   - Describe your findings: each team member is asked to follow through with one line of investigation/exploration. Document your findings in text, code and in pictures. 
   - Collect all of your experiences and make it into one cohesive document. Use the **README.Rmd** file of the lab-2 repo for this document. Write a TL;DR at the front of the document summarising your findings.
 
