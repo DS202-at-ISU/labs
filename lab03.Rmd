@@ -31,7 +31,7 @@ The deliverable is, again, a team-edited report.
 
 # Getting Ready
 
-1. Identify your team! Go to Canvas and find out which team you are in for Lab 3. There are 12 teams with 3 or 4 members.
+1. Identify your team! Go to Canvas and find out which team you are in for Lab 3. There are 17 teams with 3 or 4 members.
 
 2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
 If you are in the classroom, find the other members of your team and sit with them.
