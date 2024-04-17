@@ -65,13 +65,13 @@ If you are in the classroom, find the other members of your team and sit with th
   
   - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
-2. Start a new RStudio project on your local machine using the link to the github repository.
+2. Start a new RStudio project on your local machine using the link to the github repository. (Connect your local R project to your Github repo)
 
 3. Create a new RMarkdown file called `progress-report-<your github handle>.Rmd` (Mine would be called `progress-report-willju-wangqian.Rmd`). Delete everything from line 12 on. 
 
 4. Save the file and add it to your github repository. 
 
-5. Use this RMarkdown file for your lab notes - try to keep track of what you are doing, so you have an easier time afterward to see what worked and what didn't.
+5. Use this RMarkdown file for your lab notes - every individual should try to scrape the dataset. Keep track of what you are doing in your own Rmd file, so you have an easier time afterward to see what worked and what didn't.
 
 4. Commit the file and push. We are ready to roll!
 
@@ -109,7 +109,7 @@ head(HallOfFame, 3)
 
 # Deliverable: data
 
-As a team, create the Hall of fame data for the year 2023.
+As a team, create the Hall of fame data for the year 2023. Each of you might result in a dataset. Compared your results in the team and select one as your final result.
 
 Save the result by appending the new data frame(s) to the existing data `HallOfFame` in `Lahman` package.
 
@@ -119,6 +119,14 @@ HallOfFame %>%
   geom_bar() +
   xlim(c(1936, 2022))
 ```
+
+---
+
+# Submission
+
+1. Push changes to your file `progress-report-<github handle>.Rmd` to the github repo. 
+
+2. Save the expanded `HallOfFame` as a csv file `HallOfFame.csv`. Push `HallOfFame.csv` to the team's repository.
 
 ---
 
@@ -205,16 +213,11 @@ Make sure to not export the row names, otherwise each successive read & write of
 readr::write_csv(dframe, file="some-other-file.csv")
 ```
 
+
+
 ---
 
-# Submission
 
-1. Push changes to your file `progress-report-<github handle>.Rmd` to the github repo. 
-
-2. Save the expanded `HallOfFame` as a csv file `HallOfFame.csv`. Push `HallOfFame.csv` to the team's repository.
-
-
-
-Due date: You have time until Monday, Nov 27 at 11:59 pm to submit the final RMmarkdown file.
+Due date: You have time until Monday, Apr 22 at 11:59 pm to submit the final RMmarkdown file.
 
 One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)

@@ -74,13 +74,13 @@ If you are in the classroom, find the other members of your team and sit with th
   
   - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
-2. Start a new RStudio project on your local machine using the link to the github repository.
+2. Start a new RStudio project on your local machine using the link to the github repository. (Connect your local R project to your Github repo)
 
 3. Create a new RMarkdown file called `progress-report-&lt;your github handle&gt;.Rmd` (Mine would be called `progress-report-willju-wangqian.Rmd`). Delete everything from line 12 on. 
 
 4. Save the file and add it to your github repository. 
 
-5. Use this RMarkdown file for your lab notes - try to keep track of what you are doing, so you have an easier time afterward to see what worked and what didn't.
+5. Use this RMarkdown file for your lab notes - every individual should try to scrape the dataset. Keep track of what you are doing in your own Rmd file, so you have an easier time afterward to see what worked and what didn't.
 
 4. Commit the file and push. We are ready to roll!
 
@@ -126,7 +126,7 @@ head(HallOfFame, 3)
 
 # Deliverable: data
 
-As a team, create the Hall of fame data for the year 2023.
+As a team, create the Hall of fame data for the year 2023. Each of you might result in a dataset. Compared your results in the team and select one as your final result.
 
 Save the result by appending the new data frame(s) to the existing data `HallOfFame` in `Lahman` package.
 
@@ -139,6 +139,14 @@ HallOfFame %&gt;%
 ```
 
 ![](lab04_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+---
+
+# Submission
+
+1. Push changes to your file `progress-report-&lt;github handle&gt;.Rmd` to the github repo. 
+
+2. Save the expanded `HallOfFame` as a csv file `HallOfFame.csv`. Push `HallOfFame.csv` to the team's repository.
 
 ---
 
@@ -161,11 +169,11 @@ head(tables[[1]], 3)
 
 ```
 ## # A tibble: 3 × 39
-##   ``    ``          ``    ``    ``    ``    ``    ``    ``    ``    ``    ``   
-##   &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
-## 1 Rk    Name        YoB   Votes %vote HOFm  HOFs  Yrs   WAR   WAR7  JAWS  Jpos 
-## 2 1     Scott Rolen 6th   297   76.3% 99    40    17    70.1  43.6  56.9  55.8 
-## 3 2     Todd Helton 5th   281   72.2% 175   59    17    61.8  46.6  54.2  53.4 
+##   ``    ``           ``    ``    ``    ``    ``    ``    ``    ``    ``    ``   
+##   &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 Rk    Name         YoB   Votes %vote HOFm  HOFs  Yrs   WAR   WAR7  JAWS  Jpos 
+## 2 1     Scott Rolen  6th   297   76.3% 99    40    17    70.1  43.6  56.9  56.3 
+## 3 2     Todd Helton… 5th   281   72.2% 175   59    17    61.8  46.6  54.2  53.4 
 ## # ℹ 27 more variables: `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
 ## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
 ## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
@@ -274,17 +282,12 @@ Make sure to not export the row names, otherwise each successive read &amp; writ
 readr::write_csv(dframe, file="some-other-file.csv")
 ```
 
+
+
 ---
 
-# Submission
 
-1. Push changes to your file `progress-report-&lt;github handle&gt;.Rmd` to the github repo. 
-
-2. Save the expanded `HallOfFame` as a csv file `HallOfFame.csv`. Push `HallOfFame.csv` to the team's repository.
-
-
-
-Due date: You have time until Monday, Nov 27 at 11:59 pm to submit the final RMmarkdown file.
+Due date: You have time until Monday, Apr 22 at 11:59 pm to submit the final RMmarkdown file.
 
 One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)
     </textarea>
