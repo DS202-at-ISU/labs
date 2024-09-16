@@ -1,7 +1,6 @@
 ---
 title: "DS 202 - lab #1: let's get gitting!"
 author: Will Ju
-date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -26,7 +25,7 @@ With your team members you will work on sharing and editing files on Github.
 
 # Getting Ready
 
-1. Identify your team! Go to Canvas and find out which team you are in for Lab 1. There are 17 teams with 3 or 4 members.
+1. Identify your team! Go to Canvas and find out which team you are in for Lab 1.
 
 2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
 If you are in the classroom, find the other members of your team and sit with them.
