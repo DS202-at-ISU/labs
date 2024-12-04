@@ -24,7 +24,7 @@ library(tidyverse)
 
 # Big Picture Goal
 
-We are going to contribute an extension of the Hall of Fame data in the Lahman data package for the year 2023.
+We are going to contribute an extension of the Hall of Fame data in the Lahman data package for the year 2024.
 
 # Step-by-Step
 
@@ -37,7 +37,7 @@ In this activity we are going to
     b. and - as much as possible - clean the data automatically, or at least identify potential problems, to, finally, 
     c. use the scrapers in future years
     
-3. use the scraper to get data for the year 2023.
+3. use the scraper to get data for the year 2024.
 4. document the process. 
 
 The deliverables are (1) individual reports (Rmd) and (2) the dataset.
@@ -82,15 +82,15 @@ If you are in the classroom, find the other members of your team and sit with th
 
 The Lahman data package is based on [Sean Lahman](https://www.seanlahman.com/)'s  Baseball  [Database](https://www.seanlahman.com/baseball-archive/statistics/). 
 
-The `HallOfFame` table is a part of this set of tables and has data up to 2022.
+The `HallOfFame` table is a part of this set of tables and has data up to 2022. We have tried to scrape the 2023 data during our lectures. Now, we are aiming for the 2024 data.
 
 ## Baseball Reference 
 
 The site baseball-reference.com has grown out of Sean Lahman's work and is now maintained independently. 
 
-Incidentally, it also has tables with Hall of Fame information, e.g. for 2023: 
+Incidentally, it also has tables with Hall of Fame information, e.g. for 2024: 
 
-https://www.baseball-reference.com/awards/hof_2023.shtml
+https://www.baseball-reference.com/awards/hof_2024.shtml
 
 ---
 # Scrape the data
@@ -109,7 +109,7 @@ head(HallOfFame, 3)
 
 # Deliverable: data
 
-As a team, create the Hall of fame data for the year 2023. Each of you might result in a dataset. Compared your results in the team and select one as your final result.
+As a team, create the Hall of fame data for the year 2024. Each of you might result in a dataset. Compared your results in the team and select one as your final result.
 
 Save the result by appending the new data frame(s) to the existing data `HallOfFame` in `Lahman` package.
 
@@ -134,7 +134,7 @@ HallOfFame %>%
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(rvest)
-url <- "https://www.baseball-reference.com/awards/hof_2023.shtml"
+url <- "https://www.baseball-reference.com/awards/hof_2024.shtml"
 html <- read_html(url)
 tables <- html_table(html)
 ```
@@ -146,15 +146,30 @@ head(tables[[1]], 3)
 ```
 ---
 
-# Variable Names in Line 2
+# Variable Names in Line 1
 
 Write the dataset into a temporary file, and read the data back in (using the command `read_csv`) and skipping the first line:
 
+Obtain the column names from the first line as a variable. Overwrite the column names with the actual column names. Then delete the first line.
+
 ```{r, message=FALSE, eval=FALSE}
-write.csv(tables[[1]], "temp.csv", row.names=FALSE)
-backin <- readr::read_csv("temp.csv", skip = 1, show_col_types =FALSE)
-head(backin, 3)
+data <- tables[[1]]
+actual_col_names <- data[1, ]
+colnames(data) <- actual_col_names
+data <- data[-1, ]
+head(data, 3)
 ```
+
+---
+
+# Check variable types
+
+The code below is just an example. Make sure that all numeric variables are indeed numeric. 
+
+```{r, message=FALSE, eval=FALSE}
+data$Votes <- as.numeric(data$Votes)
+```
+
 ---
 
 # Functions you might need
@@ -205,7 +220,6 @@ write.csv(dframe, file="some-file.csv", row.names = FALSE)
 Make sure to not export the row names, otherwise each successive read & write of the file adds another column in the front.
 
 
-
 **`write_csv`** is not part of base, but faster, and does not convert special characters into `.`
 
 
@@ -218,6 +232,6 @@ readr::write_csv(dframe, file="some-other-file.csv")
 ---
 
 
-Due date: You have time until Monday, Apr 22 at 11:59 pm to submit the final RMmarkdown file.
+Due date: You have time until Monday, Dec 9 at 11:59 pm to submit the final RMmarkdown file.
 
 One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)
