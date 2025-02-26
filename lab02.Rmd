@@ -1,5 +1,5 @@
 ---
-title: "DS 202 - lab #2: exploring residential sales in Ames"
+title: "DS 2020 - lab #2: exploring residential sales in Ames"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -25,8 +25,7 @@ In this activity we are going to explore a data set and write-up our findings in
 
 1. Identify your team! Go to Canvas and find out which team you are in for Lab 2. 
 
-2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
-If you are in the classroom, find the other members of your team and sit with them.
+2. Find the other members of your team and sit with them.
 
 3. Introduce yourself to each other. 
 
@@ -47,7 +46,9 @@ If you are in the classroom, find the other members of your team and sit with th
   
   - Residential sales of properties in Ames since 2017 (`ames`) are made available as part of the `classdata` package. You are asked to explore the data set as a group and write up your findings.
   - Describe your findings: each team member is asked to follow through with one line of investigation/exploration. Document your findings in text, code and in pictures. 
-  - Collect all of your experiences and make it into one cohesive document. Use the **README.Rmd** file of the lab-2 repo for this document. Write a TL;DR at the front of the document summarising your findings.
+  - Collect all of your experiences and make it into one cohesive document. Use the **README.Rmd** file of the lab-2 repo for this document. 
+  - Knit **README.Rmd** to update **README.md**. Push changes of both **README.Rmd** and **README.md** to your repo. 
+  - Write a TL;DR at the front of the document summarising your findings.
 
 ---
 
@@ -79,6 +80,29 @@ The main variable for this exploration is `Sale Price`. **As a team**, do steps 
 Make a note of who is doing what in the README.Rmd
 
 **Individually:** follow through with your line of investigation. Include at least one plot that describes the relationship between sales prices and your variable. Include one paragraph describing the pattern you see. Are there oddities? Follow-up on (some of) them.
+
+---
+
+# Example README.Rmd
+
+### step 1 result
+
+abc
+
+### step 2 result
+
+def
+
+### step 3 result
+
+abc
+
+### step 4 result
+
+Will's work: 
+
+Craig's work:
+
 
 ---
 
