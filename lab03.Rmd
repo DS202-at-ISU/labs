@@ -1,5 +1,5 @@
 ---
-title: "DS 202 - lab #3: Avengers' Perils"
+title: "DS 2020 - lab #3: Avengers' Perils"
 author: Will Ju
 output:
   xaringan::moon_reader:
@@ -33,8 +33,7 @@ The deliverable is, again, a team-edited report.
 
 1. Identify your team! Go to Canvas and find out which team you are in for Lab 3.
 
-2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
-If you are in the classroom, find the other members of your team and sit with them.
+2. Find the other members of your team and sit with them.
 
 3. Introduce yourself to each other. 
 
