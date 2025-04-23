@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>DS 202 - lab #4: Scraping (into) the Hall of Fame</title>
+    <title>DS 2020 - lab #4: Scraping (into) the Hall of Fame</title>
     <meta charset="utf-8" />
     <meta name="author" content="Will Ju" />
     <script src="libs/header-attrs-2.25/header-attrs.js"></script>
@@ -13,7 +13,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# DS 202 - lab #4: Scraping (into) the Hall of Fame
+# DS 2020 - lab #4: Scraping (into) the Hall of Fame
 ]
 .author[
 ### Will Ju
@@ -33,7 +33,7 @@ background-image: url(images/hof.jpg)
 
 # Big Picture Goal
 
-We are going to contribute an extension of the Hall of Fame data in the Lahman data package for the year 2024.
+We are going to contribute an extension of the Hall of Fame data in the Lahman data package for the year 2025.
 
 # Step-by-Step
 
@@ -46,7 +46,7 @@ In this activity we are going to
     b. and - as much as possible - clean the data automatically, or at least identify potential problems, to, finally, 
     c. use the scrapers in future years
     
-3. use the scraper to get data for the year 2024.
+3. use the scraper to get data for the year 2025.
 4. document the process. 
 
 The deliverables are (1) individual reports (Rmd) and (2) the dataset.
@@ -57,8 +57,7 @@ The deliverables are (1) individual reports (Rmd) and (2) the dataset.
 
 1. Identify your team! Go to Canvas and find out which team you are in for Lab 4.
 
-2. If you are participating remotely, find your teammates via Slack / email. You can use any platform for collaboration that works for you all (Microsoft Teams, discord, WebEx, Zoom, etc)
-If you are in the classroom, find the other members of your team and sit with them.
+2. Find the other members of your team and sit with them.
 
 3. Introduce yourself to each other. 
 
@@ -76,11 +75,11 @@ If you are in the classroom, find the other members of your team and sit with th
 
 2. Start a new RStudio project on your local machine using the link to the github repository. (Connect your local R project to your Github repo)
 
-3. Create a new RMarkdown file called `progress-report-&lt;your github handle&gt;.Rmd` (Mine would be called `progress-report-willju-wangqian.Rmd`). Delete everything from line 12 on. 
+3. For each individual, create a new RMarkdown file called `progress-report-&lt;your github handle&gt;.Rmd` (Mine would be called `progress-report-willju-wangqian.Rmd`). Delete everything from line 12 on. 
 
 4. Save the file and add it to your github repository. 
 
-5. Use this RMarkdown file for your lab notes - every individual should try to scrape the dataset. Keep track of what you are doing in your own Rmd file, so you have an easier time afterward to see what worked and what didn't.
+5. Use your created RMarkdown file for your lab notes - every individual should try to scrape the dataset. Keep track of what you are doing in your own Rmd file, so you have an easier time afterward to see what worked and what didn't.
 
 4. Commit the file and push. We are ready to roll!
 
@@ -91,15 +90,15 @@ If you are in the classroom, find the other members of your team and sit with th
 
 The Lahman data package is based on [Sean Lahman](https://www.seanlahman.com/)'s  Baseball  [Database](https://www.seanlahman.com/baseball-archive/statistics/). 
 
-The `HallOfFame` table is a part of this set of tables and has data up to 2022. We have tried to scrape the 2023 data during our lectures. Now, we are aiming for the 2024 data.
+The `HallOfFame` table is a part of this set of tables and has data up to 2024. We have tried to scrape the 2023 data during our lectures. Now, we are aiming for the 2025 data.
 
 ## Baseball Reference 
 
 The site baseball-reference.com has grown out of Sean Lahman's work and is now maintained independently. 
 
-Incidentally, it also has tables with Hall of Fame information, e.g. for 2024: 
+Incidentally, it also has tables with Hall of Fame information, e.g. for 2025: 
 
-https://www.baseball-reference.com/awards/hof_2024.shtml
+https://www.baseball-reference.com/awards/hof_2025.shtml
 
 ---
 # Scrape the data
@@ -118,24 +117,24 @@ head(HallOfFame, 3)
 
 ```
 ##    playerID yearID votedBy ballots needed votes inducted category needed_note
-## 1  cobbty01   1936   BBWAA     226    170   222        Y   Player        &lt;NA&gt;
-## 2  ruthba01   1936   BBWAA     226    170   215        Y   Player        &lt;NA&gt;
-## 3 wagneho01   1936   BBWAA     226    170   215        Y   Player        &lt;NA&gt;
+## 1 aaronha01   1982   BBWAA     415    312   406        Y   Player        &lt;NA&gt;
+## 2 abbotji01   2005   BBWAA     516    387    13        N   Player        &lt;NA&gt;
+## 3 abreubo01   2020   BBWAA     397    298    22        N   Player        &lt;NA&gt;
 ```
 ---
 
 # Deliverable: data
 
-As a team, create the Hall of fame data for the year 2024. Each of you might result in a dataset. Compared your results in the team and select one as your final result.
+As a team, create the Hall of fame data for the year 2025. Each of you might result in a dataset. Compared your results in the team and select one as your final result.
 
-Save the result by appending the new data frame(s) to the existing data `HallOfFame` in `Lahman` package.
+Save this final result by appending the new data frame(s) (your cleaned scraped data) to the existing data `HallOfFame` in `Lahman` package.
 
 
 ```r
 HallOfFame %&gt;% 
   ggplot(aes(x = yearID, fill = inducted)) +
   geom_bar() +
-  xlim(c(1936, 2022))
+  xlim(c(1936, 2024))
 ```
 
 ![](lab04_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
@@ -155,7 +154,7 @@ HallOfFame %&gt;%
 
 ```r
 library(rvest)
-url &lt;- "https://www.baseball-reference.com/awards/hof_2024.shtml"
+url &lt;- "https://www.baseball-reference.com/awards/hof_2025.shtml"
 html &lt;- read_html(url)
 tables &lt;- html_table(html)
 ```
@@ -172,8 +171,8 @@ head(tables[[1]], 3)
 ##   ``    ``           ``    ``    ``    ``    ``    ``    ``    ``    ``    ``   
 ##   &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
 ## 1 Rk    Name         YoB   Votes %vote HOFm  HOFs  Yrs   WAR   WAR7  JAWS  Jpos 
-## 2 1     Adrian Belt… 1st   366   95.1% 163   55    21    93.5  48.7  71.1  56.3 
-## 3 2     Todd Helton  6th   307   79.7% 175   59    17    61.8  46.6  54.2  53.4 
+## 2 1     Ichiro Suzu… 1st   393   99.7% 235   44    19    60.0  43.7  51.8  56.0 
+## 3 2     CC Sabathia  1st   342   86.8% 128   48    19    62.3  39.4  50.8  61.3 
 ## # ℹ 27 more variables: `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
 ## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
 ## #   `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;, `Batting Stats` &lt;chr&gt;,
@@ -186,7 +185,7 @@ head(tables[[1]], 3)
 
 # Variable Names in Line 1
 
-Write the dataset into a temporary file, and read the data back in (using the command `read_csv`) and skipping the first line:
+&lt;!-- Write the dataset into a temporary file, and read the data back in (using the command `read_csv`) and skipping the first line: --&gt;
 
 Obtain the column names from the first line as a variable. Overwrite the column names with the actual column names. Then delete the first line.
 
@@ -302,7 +301,7 @@ readr::write_csv(dframe, file="some-other-file.csv")
 ---
 
 
-Due date: You have time until Monday, Dec 9 at 11:59 pm to submit the final RMmarkdown file.
+Due date: You have time until Monday, Apr 28 at 11:59 pm to submit the final RMmarkdown file.
 
 One team member: upload the team's repo link to Canvas (just to signal to the instructor that you are done)
     </textarea>
