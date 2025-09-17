@@ -36,17 +36,17 @@ With your team members you will work on sharing and editing files on Github.
 
 ---
 
-# Step-by Step
+# Step-by-Step
 
 Accept the link to Github Classroom shared in the announcement.
   
-  - This link will ask you to log in to github. Select your name from the list by clicking on it.  
+  - This link will ask you to log in to GitHub. Select your name from the list by clicking on it.  
 
   - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
 ---
 
-# Step-by Step cont'd
+# Step-by-Step cont'd
 
 ## Overall aim of this lab:
 
