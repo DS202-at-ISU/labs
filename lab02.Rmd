@@ -31,28 +31,33 @@ In this activity we are going to explore a data set and write-up our findings in
 
 4. Go to https://ds202-at-isu.github.io/labs/lab02.html and follow the instructions.
 
-
 ---
 
-# Step-by Step
+# Create Your Lab Repo in Github Classroom
 
-1. Accept the link to Github Classroom shared in the announcement/chat. 
+Accept the link to Github Classroom shared in the announcement.
   
-  - This link will ask you to log in to github. Select your name from the list by clicking on it.  
-<!-- https://classroom.github.com/a/pfl2YPZY-->
+  - This link will ask you to log in to GitHub. Select your name from the list by clicking on it.  
+
   - Check if your team number already exists - if it does, join the team with the right number. If it doesn't exist yet, create it yourself.
 
-2. Overall aim of this lab:
+---
+
+# Overall aim of this lab:
   
-  - Residential sales of properties in Ames since 2017 (`ames`) are made available as part of the `classdata` package. You are asked to explore the data set as a group and write up your findings.
-  - Describe your findings: each team member is asked to follow through with one line of investigation/exploration. Document your findings in text, code and in pictures. 
-  - Collect all of your experiences and make it into one cohesive document. Use the **README.Rmd** file of the lab-2 repo for this document. 
-  - Knit **README.Rmd** to update **README.md**. Push changes of both **README.Rmd** and **README.md** to your repo. 
-  - Write a TL;DR at the front of the document summarising your findings.
+- Residential sales of properties in Ames since 2017 (`ames`) are made available as part of the `classdata` package. You are asked to explore the data set as a group and write up your findings.
+
+- Describe your findings: each team member is asked to follow through with one line of investigation/exploration. Document your findings in text, code and in pictures. 
+
+- Collect all of your experiences and make it into one cohesive document. Use the **README.Rmd** file of the lab-2 repo for this document. 
+
+- Knit **README.Rmd** to update **README.md**. Push changes of both **README.Rmd** and **README.md** to your repo. 
+
+- Write a TL;DR at the front of the document summarising your findings.
 
 ---
 
-# A Data Exploration
+# What You Need to Do
 
 1. inspect the first few lines of the data set: 
 
@@ -62,7 +67,7 @@ In this activity we are going to explore a data set and write-up our findings in
 
 3. start the exploration with the main variable: 
 
-  - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd? 
+  - which variable is the main variable? what is the range of this variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd? 
   - follow-up on oddities: see 4
 
 4. pick a variable that might be related to the main variable. 
@@ -83,19 +88,19 @@ Make a note of who is doing what in the README.Rmd
 
 ---
 
-# Example README.Rmd
+# Example Final README.Rmd
 
 ### step 1 result
 
-abc
+As a team, we found that ...
 
 ### step 2 result
 
-def
+As a team, we found that ...
 
 ### step 3 result
 
-abc
+As a team, we found that ...
 
 ### step 4 result
 
